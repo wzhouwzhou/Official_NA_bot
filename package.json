@@ -1,0 +1,15 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "Official Bot Specialized for +NA clan.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ping"
+  },
+  "author": "Ezio",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "discord.js-commando": "^0.10.0"
+  }
+}
