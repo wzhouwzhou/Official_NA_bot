@@ -1,30 +1,16 @@
 const config = require("./config.json");
 const database = require("./database.json");
-const Discord = require("discord.js");
+const Commando = require("discord.js-commando");
 const fs = require("fs");
-const bot = new Discord.Client({disableEveryone: true});
-bot.commands = new Discord.Collection();
+const bot = new Commando.Client({disableEveryone: true});
 
-fs.readdir("./commands/", (err, files) => {
-
-  if(err) console.log(err);
-  let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0){
-    console.log("Couldn't find commands.");
-    return;
-  }
-
-  jsfile.forEach((f, i) =>{
-    let props = require(`./commands/${f}`);
-    console.log(`${f} loaded!`);
-    bot.commands.set(props.help.name, props);
-  });
-});
+bot.registry.registerDefaults();
+bot.registry.registerCommandsIn(__dirname + "/commannds");
 
 
 bot.on("ready", async () =>{
   console.log(`${bot.user.username} is online!`);
-  bot.user.setActivity(`Serving ${bot.guilds.size} servers`);
+  bot.user.setActivity(`with 180+ Members`);
 });
 bot.on('message', (message) =>{
           if (message.content == 'GM' || message.content == 'Gm' || message.content == 'gm' || message.content == 'Gm guys' || message.content == 'GM guys' || message.content == 'Good morning' ){
