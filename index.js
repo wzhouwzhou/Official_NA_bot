@@ -6,7 +6,7 @@ const bot = new Discord.Client();
 
 bot.on("ready", async () =>{
   console.log(`${bot.user.username} is online!`);
-  bot.user.setActivity(`with 180+ members!`);
+  bot.user.setActivity(`Serving ${bot.guilds.size} servers`);
 });
 bot.on('message', (message) =>{
           if (message.content == 'GM' || message.content == 'Gm' || message.content == 'gm' || message.content == 'Gm guys' || message.content == 'GM guys' || message.content == 'Good morning' ){
@@ -286,5 +286,28 @@ bot.on("message", async message => {
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
+
+  if(command === "report") {
+    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+     if(!rUser) return message.channel.send("Couldn't find user.");
+     let rreason = args.join(" ").slice(22);
+
+     let reportEmbed = new Discord.RichEmbed()
+     .setDescription("Reports")
+     .setColor("#17dbd6")
+     .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
+     .addField("Reported By", `${message.author} with ID: ${message.author.id}`)
+     .addField("Channel", message.channel)
+     .addField("Time", message.createdAt)
+     .addField("Reason", rreason);
+
+     let reportschannel = message.guild.channels.find(`name`, "reports");
+     if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
+
+
+     message.delete().catch(O_o=>{});
+     reportschannel.send(reportEmbed);
+
+  }
 });
-bot.login(process.env.token);
+bot.login(config.token);
