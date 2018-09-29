@@ -2,6 +2,7 @@ const config = require("./config.json");
 const database = require("./database.json");
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const ms = require("ms");
 
 
 bot.on("ready", async () =>{
