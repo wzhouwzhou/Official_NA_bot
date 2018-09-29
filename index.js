@@ -93,7 +93,7 @@ bot.on("message", async message =>{
     .addField("Bot Name" , bot.user.username)
     .addField("Prefix" , config.prefix)
     .addField("Main Commands" , "botinfo, claninfo, serverinfo, warstats, link, say" )
-    .addField("Support Commands" , "help, ping " )
+    .addField("Support Commands" , "help, ping, report " )
     .addField("Moderation Commands" , "purge, kick, ban" )
     .addField("Author" , "Ezio | PhoenixHeat")
     .addField("Created on" , bot.user.createdAt )
@@ -146,7 +146,7 @@ bot.on("message", async message =>{
     .setThumbnail(bicon)
     .addField("Prefix[Main Commands]" , config.prefix)
     .addField("Main Commands" , "botinfo, claninfo, serverinfo, warstats, link, say" )
-    .addField("Fun Commands" , "help, ping" )
+    .addField("Fun Commands" , "help, ping, report" )
     .addField("Moderation Commands" , "purge, kick, ban" );
 
     return message.channel.send(botembed);
