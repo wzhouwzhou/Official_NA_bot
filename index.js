@@ -6,7 +6,7 @@ const bot = new Discord.Client();
 
 bot.on("ready", async () =>{
   console.log(`${bot.user.username} is online!`);
-  bot.user.setActivity(`Serving ${message.guild.memberCount} members!`);
+  bot.user.setGame(`with 180+ members!`);
 });
 bot.on('message', (message) =>{
           if (message.content == 'GM' || message.content == 'Gm' || message.content == 'gm' || message.content == 'Gm guys' || message.content == 'GM guys' || message.content == 'Good morning' ){
