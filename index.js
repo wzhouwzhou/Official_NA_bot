@@ -3,7 +3,7 @@ const database = require("./database.json");
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const ms = require("ms");
-
+const fs = require("fs");
 
 bot.on("ready", async () =>{
   console.log(`${bot.user.username} is online!`);
@@ -367,7 +367,7 @@ if(command === "mute") {
   }
   }
 if(command === "removerole"){
-  if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("Sorry pal, you can't do that.");
+  if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply("Sorry pal, you can't do that.");
   let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if(!rMember) return message.reply("Couldn't find that user, yo.");
   let role = args.join(" ").slice(22);
