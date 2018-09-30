@@ -2,8 +2,8 @@ const config = require("./config.json");
 const database = require("./database.json");
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const ms = require("ms");
 const fs = require("fs");
+const ms = require("ms");
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
 
