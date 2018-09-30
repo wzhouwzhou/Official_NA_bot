@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const ms = require("ms");
 const fs = require("fs");
-let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
+
 
 
 bot.on("ready", async () =>{
@@ -466,15 +466,9 @@ if(command === "removerole"){
     message.reply(`<@${wUser.id}> has been banned.`)
   }
   }
-  if(command === "warnings"){
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You can't do that.");
-  let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
-  if(!wUser) return message.reply("Couldn't find them yo");
-  let warnlevel = warns[wUser.id].warns;
+  
 
-  message.reply(`<@${wUser.id}> has ${warnings} warnings.`);
-
- }
+ 
   
 });
 bot.login(config.token);
