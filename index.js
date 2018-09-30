@@ -423,7 +423,7 @@ if(command === "removerole"){
   warnchannel.send(warnEmbed);
 
   if(warns[wUser.id].warns == 2){
-    let muterole = message.guild.roles.find(`name`, "muted");
+    let muterole = message.guild.roles.find(`name`, "× Muted ×");
     if(!muterole) return message.reply("You should create that role dude.");
 
     let mutetime = "10m";
@@ -436,7 +436,7 @@ if(command === "removerole"){
     }, ms(mutetime))
   }
    if(warns[wUser.id].warns == 3){
-    let muterole = message.guild.roles.find(`name`, "muted");
+    let muterole = message.guild.roles.find(`name`, "× Muted ×");
     if(!muterole) return message.reply("You should create that role dude.");
 
     let mutetime = "30m";
@@ -449,7 +449,7 @@ if(command === "removerole"){
     }, ms(mutetime))
   }
    if(warns[wUser.id].warns == 4){
-    let muterole = message.guild.roles.find(`name`, "muted");
+    let muterole = message.guild.roles.find(`name`, "× Muted ×");
     if(!muterole) return message.reply("You should create that role dude.");
 
     let mutetime = "120m";
