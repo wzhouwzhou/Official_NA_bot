@@ -471,5 +471,6 @@ if(command === "removerole"){
   message.reply(`<@${wUser.id}> has ${warnlevel} warnings.`);
 
   }
+  
 });
 bot.login(config.token);
