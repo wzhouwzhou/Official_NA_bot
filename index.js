@@ -390,7 +390,7 @@ if(command === "removerole"){
   }
   
   if(command === "warn"){
-   if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("You don't have permission to use this command dude!");
+   if(!message.member.hasPermission("MUTE_MEMBERS")) return message.reply("You don't have permission to use this command dude!");
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
   if(!wUser) return message.reply("Couldn't find them yo");
   if(wUser.hasPermission("ADMINISTRATOR")) return message.reply("They waaaay too kewl");
