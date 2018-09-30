@@ -388,7 +388,7 @@ if(command === "removerole"){
   }
   
   if(command === "warn"){
-   if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply("No can do pal!");
+   if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("No can do pal!");
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
   if(!wUser) return message.reply("Couldn't find them yo");
   if(wUser.hasPermission("ADMINISTRATOR")) return message.reply("They waaaay too kewl");
