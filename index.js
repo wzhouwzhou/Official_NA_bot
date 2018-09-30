@@ -278,11 +278,12 @@ bot.on("message", async message => {
     // This command removes all messages from all users in the channel, up to 100.
 
     // get the delete count, as an actual number.
+     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You don't have permission to use this command dude!");
     const deleteCount = parseInt(args[0], 10);
 
     // Ooooh nice, combined conditions. <3
-    if(!deleteCount || deleteCount < 2 || deleteCount > 100)
-      return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
+    if(!deleteCount || deleteCount < 2 || deleteCount > 1000)
+      return message.reply("Please provide a number between 2 and 1000 for the number of messages to delete");
 
     // So we get our messages, and delete them. Simple enough, right?
     const fetched = await message.channel.fetchMessages({limit: deleteCount});
@@ -314,7 +315,8 @@ bot.on("message", async message => {
   }
   
 if(command === "mute") {
-    let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+  if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("You don't have permission to use this command dude!");
+  let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("Couldn't find user.");
   if(tomute.hasPermission("ADMINISTRATOR")) return message.reply("Can't mute them!");
   let muterole = message.guild.roles.find(`name`, "× Muted ×");
@@ -388,7 +390,7 @@ if(command === "removerole"){
   }
   
   if(command === "warn"){
-   if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("No can do pal!");
+   if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("You don't have permission to use this command dude!");
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
   if(!wUser) return message.reply("Couldn't find them yo");
   if(wUser.hasPermission("ADMINISTRATOR")) return message.reply("They waaaay too kewl");
