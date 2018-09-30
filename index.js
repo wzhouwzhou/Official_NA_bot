@@ -471,7 +471,7 @@ if(command === "removerole"){
   if(!wUser) return message.reply("Couldn't find them yo");
   let warnings = warns[wUser.id].warns;
 
-  message.reply(`<@${wUser.id}> has ${warnlevel} warnings.`);
+  message.reply(`<@${wUser.id}> has ${warnings} warnings.`);
 
   }
   
