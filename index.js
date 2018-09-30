@@ -315,13 +315,13 @@ if(command === "mute") {
     let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("Couldn't find user.");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!");
-  let muterole = message.guild.roles.find(`name`, "muted");
+  let muterole = message.guild.roles.find(`name`, "× Muted ×");
   //start of create role
   if(!muterole){
     try{
       muterole = await message.guild.createRole({
-        name: "muted",
-        color: "#000000",
+        name: "× Muted ×",
+        color: "#818386",
         permissions:[]
       })
       message.guild.channels.forEach(async (channel, id) => {
