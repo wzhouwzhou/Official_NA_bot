@@ -7,7 +7,7 @@ const ms = require("ms");
 
 bot.on("ready", async () =>{
   console.log(`${bot.user.username} is online!`);
-  bot.user.setActivity(`with 180+ Members`);
+  bot.user.setActivity("with 180+ Members");
 });
 bot.on('message', (message) =>{
           if (message.content == 'GM' || message.content == 'Gm' || message.content == 'gm' || message.content == 'Gm guys' || message.content == 'GM guys' || message.content == 'Good morning' ){
