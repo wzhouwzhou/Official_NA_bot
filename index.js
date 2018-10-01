@@ -29,6 +29,22 @@ let byechannel = member.guild.channels.find(`name`, "♡-welcome-goodbye📄");
 byechannel.send(`***Nevermind:rolling_eyes: !!! ${member} has left the server because he/she had shortage of IQ :unamused:! However he/she may join again anytime if he/she has not been banned because of misdeeds:thinking:!*** `);
 
 });
+
+bot.on("channelCreate", async member => {
+console.log(`${channel.name} has been created.`);
+  
+let schannel = channel.guild.channels.find(`name`, "•audit_log🚫");
+schannel.send(`${channel} has been created.`);
+
+});
+
+bot.on("channelDelete", async member => {
+console.log(`${channel.name} has been deleted.`);
+  
+let schannel = channel.guild.channels.find(`name`, "•audit_log🚫");
+schannel.send(`${channel} has been deleted.`);
+
+});
 bot.on('message', (message) =>{
           if (message.content == 'GM' || message.content == 'Gm' || message.content == 'gm' || message.content == 'Gm guys' || message.content == 'GM guys' || message.content == 'Good morning' ){
               message.reply('Good morning!');
