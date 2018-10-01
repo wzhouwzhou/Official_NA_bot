@@ -4,6 +4,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const fs = require("fs");
 const ms = require("ms");
+const superagent = require("superagent");
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
 
@@ -477,6 +478,19 @@ if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You c
   message.reply(`<@${wUser.id}> has ${warnings} warnings.`);
 }
  
+if(command === "dog"){
+let {body} = await superagent
+.get(`https://random.dog/woof.json`);
+  
+  
+let dogembed = new Discord.RichEmbed()
+.setColor("#17dbd6")
+.setTitle("Doggo!!!")
+.setImage(body.url);
+  
+message.channel.send(dogembed);
+
+}  
   
 });
 bot.login(config.token);
