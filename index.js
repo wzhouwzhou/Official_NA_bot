@@ -159,6 +159,7 @@ bot.on("message", async message =>{
     .addfield("Fun Commands" , "dog, cat" );
     
     return message.channel.send(botembed);
+    
 
 
   }
