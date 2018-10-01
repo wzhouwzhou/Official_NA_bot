@@ -495,6 +495,7 @@ message.channel.send(dogembed);
 
 }  
 
+
 if(command === "cat"){
 let {body} = await superagent
 .get(`http://aws.random.cat//meow`);
