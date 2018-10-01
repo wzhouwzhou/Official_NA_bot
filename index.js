@@ -503,7 +503,7 @@ let {body} = await superagent
 let catembed = new Discord.RichEmbed()
 .setColor("#17dbd6")
 .setTitle("Meeeeooow!!!")
-.setImage(body.url);
+.setImage(body.file);
   
 message.channel.send(catembed);
 
