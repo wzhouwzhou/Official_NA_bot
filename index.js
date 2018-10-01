@@ -30,7 +30,7 @@ byechannel.send(`***Nevermind:rolling_eyes: !!! ${member} has left the server be
 
 });
 
-bot.on("channelCreate", async member => {
+bot.on("channelCreate", async channel => {
 console.log(`${channel.name} has been created.`);
   
 let schannel = channel.guild.channels.find(`name`, "•audit_log🚫");
@@ -38,7 +38,7 @@ schannel.send(`${channel} has been created.`);
 
 });
 
-bot.on("channelDelete", async member => {
+bot.on("channelDelete", async channel => {
 console.log(`${channel.name} has been deleted.`);
   
 let schannel = channel.guild.channels.find(`name`, "•audit_log🚫");
