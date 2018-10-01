@@ -7,6 +7,7 @@ const ms = require("ms");
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
 
+
 bot.on("ready", async () =>{
   console.log(`${bot.user.username} is online!`);
   bot.user.setActivity("with 180+ Members");
