@@ -13,6 +13,22 @@ bot.on("ready", async () =>{
   console.log(`${bot.user.username} is online!`);
   bot.user.setActivity("with 180+ Members");
 });
+
+bot.on("guildMemberAdd", async member => {
+console.log(`${member.id} has joined the server.`);
+  
+let welcomechannel = member.guild.channels.find(`name`, "♡-welcome-goodbye📄");
+welcomechannel.send(`Ayeee!!! ${member} has just joined the campaign!!! Welcome him/her to our community!!!`);
+
+});
+
+bot.on("guildMemberRemove", async member => {
+console.log(`${member.id} has left the server.`);
+  
+let byechannel = member.guild.channels.find(`name`, "♡-welcome-goodbye📄");
+byechannel.send(`Nevermind:rolling_eyes: !!! ${member} has left the server because he/she had shortage of IQ :unaused:! However he may join again anytime if he has not beem banned because of misdeeds:thinking:! `);
+
+});
 bot.on('message', (message) =>{
           if (message.content == 'GM' || message.content == 'Gm' || message.content == 'gm' || message.content == 'Gm guys' || message.content == 'GM guys' || message.content == 'Good morning' ){
               message.reply('Good morning!');
