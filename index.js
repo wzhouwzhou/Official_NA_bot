@@ -93,12 +93,6 @@ bot.on('message', (message) =>{
             message.reply('Are you gay dude? Get LGBT role from #√-custom_roles✳ channel. :grin:');
 
           }
-          if (message.content == 'WTF' || message.content == 'wtf' || message.content == 'Wtf' || message.content == 'tf' || message.content == 'TF' || message.content == 'Tf' || message.content == 'fuck' || message.content == 'Fk' ||
-           message.content == 'fk' || message.content == 'fuck!' )
-          {
-            message.reply('Nothing related to f*cking is going on here!');
-
-          }
           if (message.content == 'NN' || message.content == 'nn' || message.content == 'Nn' ){
               message.reply('What\'s wrong?');
           }
