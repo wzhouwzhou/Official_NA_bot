@@ -44,6 +44,7 @@ console.log(`${channel.name} has been deleted.`);
 let schannel = channel.guild.channels.find(`name`, "•audit_log🚫");
 schannel.send(`${channel} has been deleted.`);
 
+  
 });
 bot.on('message', (message) =>{
           if (message.content == 'GM' || message.content == 'Gm' || message.content == 'gm' || message.content == 'Gm guys' || message.content == 'GM guys' || message.content == 'Good morning' ){
