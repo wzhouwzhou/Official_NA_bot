@@ -491,6 +491,19 @@ let dogembed = new Discord.RichEmbed()
 message.channel.send(dogembed);
 
 }  
+
+if(command === "cat"){
+let {body} = await superagent
+.get(`http://aws.random.cat//meow`);
   
+  
+let catembed = new Discord.RichEmbed()
+.setColor("#17dbd6")
+.setTitle("Meeeeooow!!!")
+.setImage(body.url);
+  
+message.channel.send(catembed);
+
+}  
 });
 bot.login(config.token);
