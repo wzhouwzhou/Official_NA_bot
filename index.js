@@ -221,7 +221,7 @@ bot.on("message", async message =>{
     .addField("Co-Leaders" , database.coldr )
     .addField("Gods" , database.gods )
     .addField("Legends" , database.legends )
-    .addfield("Veterans" , database.vets )
+    .addField("Veterans" , database.vets )
     .addField("Pros" , database.pros)
     .addField("Challengers" , database.chng )
     .addField("Beginners" , database.beg )
