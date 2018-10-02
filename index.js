@@ -554,7 +554,7 @@ if(command === "warnings"){
   message.reply(`<@${wUser.id}> has ${warnlevel} warnings.`);
 
 }
-}
+
  
 if(command === "dog"){
 let {body} = await superagent
