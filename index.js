@@ -207,6 +207,29 @@ bot.on("message", async message =>{
 
 }
 
+  if (cmd === `${prefix}players`){
+
+    let bicon = bot.user.displayAvatarURL;
+    let playerembed = new Discord.RichEmbed()
+    .setTitle("+NA Ranked Players List")
+    .setColor("#17dbd6")
+    .setThumbnail(bicon)
+    .addfield("Supreme Leader" , database.sldr)
+    .addField("Leaders" , database.ldrs)
+    .addField("Prides of +NA" , database.pride )
+    .addField("Co-Leaders" , database.coldr )
+    .addField("Gods" , database.gods )
+    .addField("Legends" , database.legends )
+    .addfield("Veterans" , database.vets )
+    .addField("Pros" , database.pros)
+    .addField("Challengers" , database.chng )
+    .addField("Beginners" , database.beg )
+    .addField("Last Updated" , database.date );
+
+    return message.channel.send(playerembed);
+
+
+  }
 
 });
 bot.on("guildCreate", guild => {
@@ -452,6 +475,7 @@ if(command === "removerole"){
   if(!warnchannel) return message.reply("Couldn't find channel");
 
   warnchannel.send(warnEmbed);
+  message.channel.send(`<@${wUser.id}> has been warned ✅`);  
 
   if(warns[wUser.id].warns == 2){
     let muterole = message.guild.roles.find(`name`, "× Muted ×");
