@@ -153,6 +153,7 @@ bot.on("message", async message =>{
     return message.channel.send(botembed);
 
   }
+  
 
   if (cmd === `${prefix}claninfo`){
 
