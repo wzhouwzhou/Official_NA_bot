@@ -125,7 +125,7 @@ bot.on("message", async message =>{
     .setThumbnail(bicon)
     .addField("Bot Name" , bot.user.username)
     .addField("Prefix" , config.prefix)
-    .addField("Main Commands" , "botinfo, claninfo, serverinfo, warstats, link, say, warnings" )
+    .addField("Main Commands" , "botinfo, claninfo, serverinfo, warstats, players, staffs, link, say, warnings" )
     .addField("Support Commands" , "help, ping, report " )
     .addField("Moderation Commands" , "purge, warn, mute, kick, ban" )
     .addField("Management Commands" , "addrole, removerole" )
