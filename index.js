@@ -18,7 +18,7 @@ bot.on("guildMemberAdd", async member => {
 console.log(`${member.id} has joined the server.`);
   
 let welcomechannel = member.guild.channels.find(`name`, "♡-welcome-goodbye📄");
-welcomechannel.send(`***Ayeee!!! ${member} has just joined the campaign!!! Welcome him/her to our community!!!:kissing_heart:***`);
+welcomechannel.send(`**Ayeee!!! ${member} has just joined the campaign!!! Welcome him/her to our community!!!:kissing_heart:**`);
 
 });
 
@@ -26,7 +26,7 @@ bot.on("guildMemberRemove", async member => {
 console.log(`${member.id} has left the server.`);
   
 let byechannel = member.guild.channels.find(`name`, "♡-welcome-goodbye📄");
-byechannel.send(`***Nevermind:rolling_eyes: !!! ${member} has left the server because he/she had shortage of IQ :unamused:! However he/she may join again anytime if he/she has not been banned because of misdeeds:thinking:!*** `);
+byechannel.send(`**Nevermind:rolling_eyes: !!! ${member} has left the server because he/she had shortage of IQ :unamused:! However he/she may join again anytime if he/she has not been banned because of misdeeds:thinking:!** `);
 
 });
 
