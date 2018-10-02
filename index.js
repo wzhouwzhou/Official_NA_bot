@@ -215,7 +215,7 @@ bot.on("message", async message =>{
     .setTitle("+NA Ranked Players List")
     .setColor("#17dbd6")
     .setThumbnail(bicon)
-    .addfield("Supreme Leader" , database.sldr)
+    .addField("Supreme Leader" , database.sldr)
     .addField("Leaders" , database.ldrs)
     .addField("Prides of +NA" , database.pride )
     .addField("Co-Leaders" , database.coldr )
