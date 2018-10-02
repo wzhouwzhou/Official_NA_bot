@@ -17,9 +17,9 @@
   "own": "Zeroskillz",
   "fnd": "Zeroskillz, Ezio, Sam, Revolve",
   "coown": "Revolve, Mary",
-  "Server Manager": "Ezio",
-  "Head of All Staffs": "Sam",
-  "Senior Staff Team": "Fact, Gon",
-  "Staff Team": "Volcano, Evion, Rahul",
-  "Interns": "Equinix, Deadshot, Rishabh"
+  "serv": "Ezio",
+  "hs": "Sam",
+  "ss": "Fact, Gon",
+  "st": "Volcano, Evion, Rahul",
+  "int": "Equinix, Deadshot, Rishabh"
 }
