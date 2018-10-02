@@ -232,6 +232,27 @@ bot.on("message", async message =>{
 
   }
 
+  if (cmd === `${prefix}staffs`){
+
+    let bicon = bot.user.displayAvatarURL;
+    let staffembed = new Discord.RichEmbed()
+    .setTitle("+NA Official Staff List")
+    .setColor("#17dbd6")
+    .setThumbnail(bicon)
+    .addField("Owner" , database.own)
+    .addField("Official Founders" , database.fnd)
+    .addField("Co-Owners" , database.coown )
+    .addField("Server Manager" , database.serv )
+    .addField("Head of All Staffs" , database.hs )
+    .addField("Senior Staff Team" , database.ss )
+    .addField("Staff Team" , database.st )
+    .addField("Interns" , database.int)
+    .addField("Last Updated" , database.date );
+
+    return message.channel.send(staffembed);
+
+
+  }
 });
 bot.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
