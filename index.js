@@ -128,7 +128,7 @@ bot.on("message", async message =>{
     .addField("Support Commands" , "help, ping, report " )
     .addField("Moderation Commands" , "purge, warn, mute, kick, ban" )
     .addField("Management Commands" , "addrole, removerole" )
-    .addfield("Fun Commands" , "dog, cat" )
+    .addField("Fun Commands" , "dog, cat" )
     .addField("Author" , "Ezio | PhoenixHeat")
     .addField("Created on" , bot.user.createdAt )
     .addField("Bot Status" , "Online ✅" );
