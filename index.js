@@ -180,7 +180,7 @@ bot.on("message", async message =>{
     .setColor("#17dbd6")
     .setThumbnail(bicon)
     .addField("Prefix[Main Commands]" , config.prefix)
-    .addField("Main Commands" , "botinfo, claninfo, serverinfo, warstats, link, say, warnings")
+    .addField("Main Commands" , "botinfo, claninfo, serverinfo, warstats, players, staffs, link, say, warnings")
     .addField("Support Commands" , "help, ping, report" )
     .addField("Moderation Commands" , "purge, warn, mute, kick, ban" )
     .addField("Management Commands" , "addrole, removerole" )
