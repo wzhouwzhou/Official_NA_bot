@@ -623,7 +623,7 @@ if(command === "coinflip"){
 let replies = ["Heads!", "Tails!"];
 let result = Math.floor((Math.random() * replies.length));
 
-message.channel.send("${result}");
+message.channel.send(`${result}`);
 
 }  
 });
