@@ -546,7 +546,7 @@ if(command === "removerole"){
   }
   
 if(command === "warnings"){
- if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You can't do that.");
+ if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You can't do that.");
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
   if(!wUser) return message.reply("Couldn't find them yo");
   let warnings = warns[wUser.id].warns;
