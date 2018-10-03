@@ -474,6 +474,7 @@ if(command === "removerole"){
   if(!wUser) return message.reply("Couldn't find them yo");
   if(wUser.hasPermission("ADMINISTRATOR")) return message.reply("They waaaay too kewl");
   let reason = args.join(" ").slice(22);
+  if(!reason) return message.reply("Please provide a valid reason!!!");
 
   if(!warns[wUser.id]) warns[wUser.id] = {
     warns: 0
@@ -550,9 +551,10 @@ if(command === "warnings"){
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
   if(!wUser) return message.reply("Couldn't find them yo");
   let warnings = warns[wUser.id].warns;
+  if(!warnings) return message.reply("This good guy has no warnings!");
 
   message.reply(`<@${wUser.id}> has ${warnings} warnings.`);
-
+  
 }
 
  
