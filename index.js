@@ -603,5 +603,13 @@ let askembed = new Discord.RichEmbed()
 message.channel.send(askembed);
 
 }  
+  if(command === "dickrate"){
+let dUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
+let result = Math.floor(Math.random() * 11) + 1;
+
+
+message.channel.send(`${dUser} has a ${result} inches dick!`);
+
+}  
 });
 bot.login(config.token);
