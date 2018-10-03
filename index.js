@@ -604,7 +604,6 @@ message.channel.send(askembed);
 
 }  
   if(command === "dicksize"){
-message.delete().catch(O_o=>{});
 let dUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
 let result = Math.floor(Math.random() * 11) + 1;
 
