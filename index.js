@@ -620,11 +620,21 @@ message.reply(`You have rolled a ${result}!`);
 
 }  
 
-if(command === "coinflip"){
+if(command === "toss"){
 let replies = ["Heads!", "Tails!"];
 let result = Math.floor((Math.random() * replies.length));
+let {body} = await superagent
+.get(`https://media.buzzle.com/media/images-en/gallery/symbols/1200-141325539-coin-toss.jpg`);
+  
+let tossembed = new Discord.RichEmbed()
+.setTitle(`Coin toss by ${message.author.tag}`)
+.setThumbnail(body)
+.setColor("#17dbd6")
+.addField("Result", replies[result]);
 
-message.channel.send(`replies[result]`);
+
+
+message.channel.send(tossembed);
 
 }  
 });
