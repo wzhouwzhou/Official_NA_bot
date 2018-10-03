@@ -603,12 +603,28 @@ let askembed = new Discord.RichEmbed()
 message.channel.send(askembed);
 
 }  
-  if(command === "dickrate"){
+  if(command === "dicksize"){
+message.delete().catch(O_o=>{});
 let dUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
 let result = Math.floor(Math.random() * 11) + 1;
 
 
 message.channel.send(`${dUser} has a ${result} inches dick!`);
+
+}  
+  
+if(command === "roll"){
+let result = Math.floor(Math.random() * 5) + 1;
+
+message.reply(`You have rolled a ${result}!`);
+
+}  
+
+if(command === "coinflip"){
+let replies = ["Heads!", "Tails!"];
+let result = Math.floor((Math.random() * replies.length));
+
+message.channel.send("${result}`);
 
 }  
 });
