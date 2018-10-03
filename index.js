@@ -589,7 +589,7 @@ message.channel.send(catembed);
 }  
   
 if(command === "ask"){
-if(!args[2]) return message.reply("Please ask a full question!");
+if(!args[1]) return message.reply("Please ask a full question!");
 let replies = ["Yes", "No", "Obviously", "Not at all", "Of course", "I don't know!", "I am confused!", "That's a nabish question!"];
 let result = Math.floor((Math.random() * replies.length));
 let question = args.slice(0).join(" ");
