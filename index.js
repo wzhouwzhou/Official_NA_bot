@@ -68,16 +68,16 @@ bot.on('message', (message) =>{
           {
             message.reply('Good bye!! See you again!');
           }
-          if (message.content == 'Stfu' || message.content == 'stfu' || message.content == 'STFU'  )
+          if (message.content.includes == 'Stfu' || message.content == 'stfu' || message.content == 'STFU'  )
           {
             message.reply('you better stfu or let others speak independently!!! Huh! :rage: ');
           }
-          if (message.content == 'Noob' || message.content == 'noob' || message.content == 'nub' || message.content == 'nab' || message.content == 'nabs' || message.content == 'nubs'|| message.content == 'Nabs'|| message.content == 'Nab'|| message.content == 'Nub' )
+          if (message.content.includes == 'Noob' || message.content == 'noob' || message.content == 'nub' || message.content == 'nab' || message.content == 'nabs' || message.content == 'nubs'|| message.content == 'Nabs'|| message.content == 'Nab'|| message.content == 'Nub' )
           {
             message.reply('Lol you are also noob to Hydro :joy: :rofl:');
 
           }
-          if (message.content == 'Kid' || message.content == 'Keed' || message.content == 'kid' || message.content == 'kidoo' || message.content == 'kiddo' || message.content == 'kid stfu' || message.content == 'kids' || message.content == 'Kids' ||
+          if (message.content.includes == 'Kid' || message.content == 'Keed' || message.content == 'kid' || message.content == 'kidoo' || message.content == 'kiddo' || message.content == 'kid stfu' || message.content == 'kids' || message.content == 'Kids' ||
           message.content == 'Kid stfu' || message.content == 'Kid Stfu'  )
           {
             message.reply('First know age of the guy you are calling kid.:unamused:');
