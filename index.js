@@ -17,9 +17,8 @@ bot.on("guildMemberAdd", async member => {
 console.log(`${member.id} has joined the server.`);
   
 let welcomechannel = member.guild.channels.find(`name`, "♡-welcome-goodbye📄");
-let botchannel = member.guild.channels.find(`name`, "π-bots_zone🤖");
 welcomechannel.send(`**Ayeee!!! ${member} has just joined the campaign!!! Welcome him/her to our community!!!:kissing_heart:**`);
-botchannel.send(`?addtag ${member}`);
+
 
 });
 
