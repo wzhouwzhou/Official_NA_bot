@@ -18,6 +18,7 @@ console.log(`${member.id} has joined the server.`);
   
 let welcomechannel = member.guild.channels.find(`name`, "♡-welcome-goodbye📄");
 welcomechannel.send(`**Ayeee!!! ${member} has just joined the campaign!!! Welcome him/her to our community!!!:kissing_heart:**`);
+message.channel.send(`?addtag ${member}`);
 
 });
 
@@ -29,7 +30,7 @@ byechannel.send(`**Nevermind:rolling_eyes: !!! ${member} has left the server bec
 
 });
 
-bot.on("channelCreate", async channel => {
+/*bot.on("channelCreate", async channel => {
 console.log(`${channel.name} has been created.`);
   
 let schannel = channel.guild.channels.find(`name`, "•audit_log🚫");
@@ -44,7 +45,7 @@ let schannel = channel.guild.channels.find(`name`, "•audit_log🚫");
 schannel.send(`${channel} has been deleted.`);
 
   
-});
+});*/
 bot.on('message', (message) =>{
           if (message.content == 'GM' || message.content == 'Gm' || message.content == 'gm' || message.content == 'Gm guys' || message.content == 'GM guys' || message.content == 'Good morning' ){
               message.reply('Good morning!');
@@ -258,13 +259,13 @@ bot.on("message", async message =>{
 bot.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-  bot.user.setActivity(`Serving ${bot.guilds.size} servers`);
+ 
 });
 
 bot.on("guildDelete", guild => {
   // this event triggers when the bot is removed from a guild.
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-  bot.user.setActivity(`Serving ${bot.guilds.size} servers`);
+ 
 });
 
 
