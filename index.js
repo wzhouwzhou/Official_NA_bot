@@ -6,6 +6,7 @@ const fs = require("fs");
 const ms = require("ms");
 const superagent = require("superagent");
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
+let coins = require("./coins.json");
 
 
 bot.on("ready", async () =>{
@@ -635,5 +636,22 @@ let tossembed = new Discord.RichEmbed()
 message.channel.send(tossembed);
 
 }  
+if(!coins[message.author.id]){
+    coins[message.author.id] = {
+      coins: 0
+    };
+  }
+
+  let coinAmt = Math.floor(Math.random() * 15) + 1;
+  let baseAmt = Math.floor(Math.random() * 15) + 1;
+  console.log(`${coinAmt} ; ${baseAmt}`);
+
+  if(coinAmt === baseAmt){
+    coins[message.author.id] = {
+      coins: coins[message.author.id].coins + coinAmt
+    };
+  fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
+    if (err) console.log(err)
+  });}
 });
 bot.login(config.token);
