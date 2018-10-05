@@ -636,7 +636,7 @@ let tossembed = new Discord.RichEmbed()
 message.channel.send(tossembed);
 
 }  
-if(!coins[message.author.id]){
+  if(!coins[message.author.id]){
     coins[message.author.id] = {
       coins: 0
     };
@@ -644,7 +644,6 @@ if(!coins[message.author.id]){
 
   let coinAmt = Math.floor(Math.random() * 15) + 1;
   let baseAmt = Math.floor(Math.random() * 15) + 1;
-  let cchannel = message.guild.channels.find(`name`, "coin_logs");
   console.log(`${coinAmt} ; ${baseAmt}`);
 
   if(coinAmt === baseAmt){
@@ -659,7 +658,7 @@ if(!coins[message.author.id]){
   .setColor("#0000FF")
   .addField("💸", `${coinAmt} coins added!`);
 
-  cchannel.send(coinEmbed).then(msg => {msg.delete(5000)});
+  message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
   }
 if(command === "coins"){
  if(!coins[message.author.id]){
