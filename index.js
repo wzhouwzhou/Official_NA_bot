@@ -38,7 +38,7 @@ bot.on("message", async message => {
 
   if(!coins[message.author.id]){
     coins[message.author.id] = {
-      coins: 0
+      coins: 1000
     };
   }
 
