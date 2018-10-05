@@ -644,6 +644,7 @@ if(!coins[message.author.id]){
 
   let coinAmt = Math.floor(Math.random() * 15) + 1;
   let baseAmt = Math.floor(Math.random() * 15) + 1;
+  let cchannel = message.guild.channels.find(`name`, "coin_logs");
   console.log(`${coinAmt} ; ${baseAmt}`);
 
   if(coinAmt === baseAmt){
@@ -652,6 +653,30 @@ if(!coins[message.author.id]){
     };
   fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
     if (err) console.log(err)
-  });}
+  });
+  let coinEmbed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#0000FF")
+  .addField("💸", `${coinAmt} coins added!`);
+
+  cchannel.send(coinEmbed).then(msg => {msg.delete(5000)});
+  }
+if(command === "coins"){
+ if(!coins[message.author.id]){
+    coins[message.author.id] = {
+      coins: 0
+    };
+  }
+
+  let uCoins = coins[message.author.id].coins;
+
+
+  let coinEmbed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#00FF00")
+  .addField("💸", uCoins);
+
+  message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
+}
 });
 bot.login(config.token);
