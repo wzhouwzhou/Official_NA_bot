@@ -166,7 +166,7 @@ bot.on("message", async message =>{
   let args = messageArray.slice(1);
 
   if(cmd === `${prefix}link`){
-    return message.channel.send("Never expiring +NA discord server link: https://discord.gg/rHsJRbC ");
+    return message.channel.send("Never expiring +NA discord server link: https://discord.gg/6rR45Ux ");
   }
 
 
