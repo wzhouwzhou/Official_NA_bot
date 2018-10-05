@@ -42,8 +42,8 @@ bot.on("message", async message => {
     };
   }
 
-  let coinAmt = Math.floor(Math.random() * 15) + 1;
-  let baseAmt = Math.floor(Math.random() * 15) + 1;
+  let coinAmt = Math.floor(Math.random() * 1) + 1;
+  let baseAmt = Math.floor(Math.random() * 1) + 1;
   console.log(`${coinAmt} ; ${baseAmt}`);
 
   if(coinAmt === baseAmt){
