@@ -687,7 +687,6 @@ let tossembed = new Discord.RichEmbed()
 
 
 message.channel.send(tossembed);
-
 }  
 });
 bot.login(process.env.token);
