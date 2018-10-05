@@ -29,12 +29,11 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
-  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-  if(!prefixes[message.guild.id]){
-    prefixes[message.guild.id] = {
-      prefixes: config.prefix
-    };
-  }
+  if(message.content.indexOf(config.prefix) !== 0) return;
+
+  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+
 
   if(!coins[message.author.id]){
     coins[message.author.id] = {
@@ -42,8 +41,8 @@ bot.on("message", async message => {
     };
   }
 
-  let coinAmt = Math.floor(Math.random() * 15) + 1;
-  let baseAmt = Math.floor(Math.random() * 15) + 1;
+  let coinAmt = Math.floor(Math.random() * 24) + 1;
+  let baseAmt = Math.floor(Math.random() * 24) + 1;
   console.log(`${coinAmt} ; ${baseAmt}`);
 
   if(coinAmt === baseAmt){
@@ -60,6 +59,20 @@ bot.on("message", async message => {
 
   message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
   }
+if(command === coins){
+  if(!coins[message.author.id]){
+  coins[message.author.id] = {
+   coins: 0
+};
+}
+let uCoins = coins[message.author.id].coins;
+
+let coinEmbed = new Discord.RichEmbed()
+.setAuthor(message.author.username)
+.setColor("#00FF00")
+.addField("💸", uCoins);
+message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
+}
 });
 
 
@@ -690,20 +703,7 @@ let tossembed = new Discord.RichEmbed()
 message.channel.send(tossembed);
 
 }  
-if(command === coins){
-  if(!coins[message.author.id]){
-  coins[message.author.id] = {
-   coins: 0
-};
-}
-let uCoins = coins[message.author.id].coins;
 
-let coinEmbed = new Discord.RichEmbed()
-.setAuthor(message.author.username)
-.setColor("#00FF00")
-.addField("💸", uCoins);
-message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
-}
 
 });
 bot.login(config.token);
