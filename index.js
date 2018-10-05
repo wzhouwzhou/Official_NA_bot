@@ -8,6 +8,7 @@ const superagent = require("superagent");
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 bot.commands = new Discord.Collection();
 let coins = require("./coins.json");
+const ytdl = require('ytdl-core');
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -704,6 +705,18 @@ if(!coins[message.author.id]){
   .addField("💸", uCoins);
 
   message.channel.send(coinEmbed);
+  
+}
+if(command === "play"){
+if(!message.member.voiceChannel) return message.channel.send("Please connect to a voice channel!");
+if(message.guild.me.voiceChannel) return message.channel.send("Sorry, the bot is already connected to a voice channel in this guild.");
+if(!args[0]) return message.channel.send("Please input a url to play something!!");
+let validate = await ytdl.validateURL(args[0]);
+if(!validate) return message.channel.send("Please input a **Valid** URL!");
+let info = await ytdl.getInfo(args[0]);
+let connection = await message.member.voiceChannel.join();
+let dispatcher = await connection.play(ytdl(args[0], {filter: 'audioonly'}));
+message.channel.send(`Now Playing: ${info.title}`);
   
 }
 });
