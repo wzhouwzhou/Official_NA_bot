@@ -61,7 +61,7 @@ bot.on("message", async message => {
   message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
   }
 
-
+});
 bot.on("ready", async () =>{
   console.log(`${bot.user.username} is online!`);
   bot.user.setActivity("Sobbing cuz +NA was hacked!");
