@@ -44,6 +44,7 @@ bot.on("message", async message => {
 
   let coinAmt = Math.floor(Math.random() * 1) + 1;
   let baseAmt = Math.floor(Math.random() * 1) + 1;
+  let cchannel = message.guild.channels.find(`name`, "coin_logs");
   console.log(`${coinAmt} ; ${baseAmt}`);
 
   if(coinAmt === baseAmt){
@@ -58,8 +59,7 @@ bot.on("message", async message => {
   .setColor("#0000FF")
   .addField("💸", `${coinAmt} coins added!`);
 
-  message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
-  }
+  cchannel.send(coinEmbed); }
 
 });
 bot.on("ready", async () =>{
