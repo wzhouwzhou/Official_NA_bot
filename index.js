@@ -726,7 +726,7 @@ if(!message.member.voiceChannel){
 message.channel.send(":x: You have to be in a voice channel to use this command.");
 return;
 }
-if(!servers[message.guild.id] servers[message.guild.id] = {
+if(!servers[message.guild.id]) servers[message.guild.id] = {
    queue: []
    });
 
