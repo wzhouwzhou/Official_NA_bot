@@ -9,6 +9,10 @@ let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 bot.commands = new Discord.Collection();
 let coins = require("./coins.json");
 const ytdl = require('ytdl-core');
+const Music = require('discord.js-musicbot-addon');
+Music.start(client, {
+  youtubeKey: 'AIzaSyDYW1nDTByP5DyexV4kQ52vwXIXTvbX2xE'
+});
 
 function play(connection, message){
 var server = servers[message.guild.id];
