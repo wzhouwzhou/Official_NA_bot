@@ -46,7 +46,7 @@ bot.on("message", async message => {
   let coinAmt = Math.floor(Math.random() * 1) + 1;
   let baseAmt = Math.floor(Math.random() * 1) + 1;
   let cchannel = message.guild.channels.find(`name`, "coin_logs");
-  console.log(`${coinAmt} ; ${baseAmt}`);
+
 
   if(coinAmt === baseAmt){
     coins[message.author.id] = {
