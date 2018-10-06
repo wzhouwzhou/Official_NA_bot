@@ -9,7 +9,7 @@ let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 bot.commands = new Discord.Collection();
 let coins = require("./coins.json");
 const ytdl = require('ytdl-core');
-var servers = {};
+
 function play(connection, message){
 var server = servers[message.guild.id];
   server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter:"audioonly"}));
@@ -19,7 +19,7 @@ var server = servers[message.guild.id];
   else connection.disconnect();
   });
 }
-
+var servers = {};
 fs.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
