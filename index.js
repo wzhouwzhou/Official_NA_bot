@@ -9,6 +9,16 @@ let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 bot.commands = new Discord.Collection();
 let coins = require("./coins.json");
 const ytdl = require('ytdl-core');
+var servers = {};
+function play(connection, message){
+var server = servers[message.guild.id];
+  server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter:"audioonly"}));
+  server.queue.shift();
+  server.dispatcher.on("end", function(){
+  if(server.queue[0]) play(connection, message);
+  else connection.disconnect();
+  });
+}
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -706,6 +716,33 @@ if(!coins[message.author.id]){
 
   message.channel.send(coinEmbed);
   
+}
+if(command === "play"){
+if (!args[1]){
+message.channel.send("Please provide a link!");
+return;
+}
+if(!message.member.voiceChannel){
+message.channel.send(":x: You have to be in a voice channel to use this command.");
+return;
+}
+if(!servers[message.guild.id] servers[message.guild.id] = {
+   queue: []
+   });
+
+var server = servers[message.guild.id];
+server.queue.push(args[1]);
+if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+  play(connection, message);});
+
+}
+if(command === "skip"){
+var server = servers[message.guild.id];
+if(server.dispatcher) server.dispatcher.end();
+}
+if(command === "stop"){
+var server = servers[message.guild.id];
+if(message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 }
 });
 bot.login(process.env.token);
