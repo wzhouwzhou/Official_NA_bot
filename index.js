@@ -707,17 +707,18 @@ if(!coins[message.author.id]){
   message.channel.send(coinEmbed);
   
 }
-if(command === "play"){
-if(!message.member.voiceChannel) return message.channel.send("Please connect to a voice channel!");
-if(message.guild.me.voiceChannel) return message.channel.send("Sorry, the bot is already connected to a voice channel in this guild.");
-if(!args[0]) return message.channel.send("Please input a url to play something!!");
-let validate = await ytdl.validateURL(args[0]);
-if(!validate) return message.channel.send("Please input a **Valid** URL!");
-let info = await ytdl.getInfo(args[0]);
-let connection = await message.member.voiceChannel.join();
-let dispatcher = await connection.play(ytdl(args[0], {filter: 'audioonly'}));
-message.channel.send(`Now Playing: ${info.title}`);
-  
-}
 });
+function $play(connection, message){
+    var server = servers[message.guild.id];
+
+    server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: 
+"audioonly"}));
+
+    server.queue.shift();
+
+    server.dispatcher.on("end", function() {
+        if(server.queue[0]) play(connection, message);
+        else connection.disconnect();
+    });
+}
 bot.login(process.env.token);
