@@ -718,7 +718,7 @@ if(!coins[message.author.id]){
   
 }
 if(command === "play"){
-if (!args[1]){
+if (!args[0]){
 message.channel.send("Please provide a link!");
 return;
 }
