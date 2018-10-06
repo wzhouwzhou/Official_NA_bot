@@ -10,7 +10,7 @@ bot.commands = new Discord.Collection();
 let coins = require("./coins.json");
 const ytdl = require('ytdl-core');
 const Music = require('discord.js-musicbot-addon');
-Music.start(client, {
+Music.start(bot, {
   youtubeKey: 'AIzaSyDYW1nDTByP5DyexV4kQ52vwXIXTvbX2xE'
 });
 
