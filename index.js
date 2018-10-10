@@ -785,9 +785,8 @@ if (command === "poll"){
           .addField(`${question}`, `${questionOptions
     .map((option, i) => `${options[i]} - ${option}`).join('\n')}`);
           
-          return message
-            .channel
-            .send(pollembed)
+          return 
+          message.channel.send(pollembed)
             .then(async (pollMessage) => {
               for (let i = 0; i < questionOptions.length; i++) {
                 await pollMessage.react(options[i]);
