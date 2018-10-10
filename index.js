@@ -100,7 +100,7 @@ bot.on("message", async message => {
   .setColor("#0000FF")
   .addField("💸", `${coinAmt} coins added!`);
 
-  coinchannel.send(coinEmbed); 
+  coinchannel.send(coinEmbed); }
 
 });
 bot.on("ready", async () =>{
