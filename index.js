@@ -780,7 +780,7 @@ if (command === "poll"){
             lastPoll: Date.now()
           };
           let pollembed = new Discord.RichEmbed()
-          .setThumbnail(`https://www.brainscape.com/blog/wp-content/uploads/2015/07/fa76e076b17687729b_2wm6ba75a.jpg`)
+          .setThumbnail(`http://www.vectorfree.com/media/vectors/raised-fist.jpg`)
           .setColor("#17dbd6")
           .addField(`${question}`, `${questionOptions
     .map((option, i) => `${options[i]} - ${option}`).join('\n')}`);
