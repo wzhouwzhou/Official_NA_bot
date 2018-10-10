@@ -774,7 +774,9 @@ if (command === "poll"){
         const question = args[0];
         const questionOptions = [...new Set(args.slice(1))];
         if (questionOptions.length > 20) {
-          return message.channel.send(`${message.author} Polls are limited to 20 options.`);
+          return message
+            .channel
+            .send(`${message.author} Polls are limited to 20 options.`);
         } else {
           pollLog[message.author.id] = {
             lastPoll: Date.now()
