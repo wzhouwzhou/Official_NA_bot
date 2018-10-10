@@ -788,7 +788,9 @@ if (command === "poll"){
     .map((option, i) => `${options[i]} - ${option}`).join('\n')}`);
           
           return 
-          message.channel.send(pollembed)
+          message
+            .channel
+            .send(pollembed)
             .then(async (pollMessage) => {
               for (let i = 0; i < questionOptions.length; i++) {
                 await pollMessage.react(options[i]);
