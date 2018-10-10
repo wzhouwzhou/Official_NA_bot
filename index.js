@@ -85,7 +85,7 @@ bot.on("message", async message => {
 
   let coinAmt = Math.floor(Math.random() * 1) + 1;
   let baseAmt = Math.floor(Math.random() * 1) + 1;
-  let coinchannel = message.guild.channels.find(`name`, "coin_logs");
+  let coinchannel = message.guild.channels.find(`name`, "♡-coin_logs💰");
 
 
   if(coinAmt === baseAmt){
