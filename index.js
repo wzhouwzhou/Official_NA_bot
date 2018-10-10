@@ -742,7 +742,7 @@ if(!coins[message.author.id]){
 
   let coinEmbed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
-  .setColor("#00FF00")
+  .setColor("#17dbd6")
   .addField("💸", uCoins);
 
   message.channel.send(coinEmbed);
@@ -779,12 +779,15 @@ if (command === "poll"){
           pollLog[message.author.id] = {
             lastPoll: Date.now()
           };
+          let pollembed = new Discord.RichEmbed()
+          .setThumbnail(`https://www.brainscape.com/blog/wp-content/uploads/2015/07/fa76e076b17687729b_2wm6ba75a.jpg`)
+          .setColor("#17dbd6")
+          .addField(`${question}`, `${questionOptions
+    .map((option, i) => `${options[i]} - ${option}`).join('\n')}`);
+          
           return message
             .channel
-            .send(`${question}
-${questionOptions
-    .map((option, i) => `${options[i]} - ${option}`).join('\n')}
-`)
+            .send(pollembed)
             .then(async (pollMessage) => {
               for (let i = 0; i < questionOptions.length; i++) {
                 await pollMessage.react(options[i]);
