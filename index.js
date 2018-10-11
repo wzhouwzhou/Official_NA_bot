@@ -279,7 +279,7 @@ bot.on("message", async message =>{
     .addField("Support Commands" , "help, ping, report" )
     .addField("Moderation Commands" , "purge, warn, mute, kick, ban" )
     .addField("Management Commands" , "addrole, removerole" )
-    .addField("Fun Commands" , "ask, dickrate, dog, cat" );
+    .addField("Fun Commands" , "ask, dicksize, dog, cat" );
     
     return message.channel.send(botembed);
     
